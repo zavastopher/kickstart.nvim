@@ -201,16 +201,12 @@ require('lazy').setup({
 
       -- Document existing key chains
       require('which-key').register {
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>c_', hidden = true },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>d_', hidden = true },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>r_', hidden = true },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>s_', hidden = true },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>w_', hidden = true },
+        { '', group = '[D]ocument' },
+        { '', group = '[R]ename' },
+        { '', group = '[S]earch' },
+        { '', group = '[W]orkspace' },
+        { '', group = '[C]ode' },
+        { '', desc = '', hidden = true, mode = { 'n', 'n', 'n', 'n', 'n' } },
       }
     end,
   },
@@ -465,13 +461,13 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
-        pyright = {},
-        html = {},
+        -- pyright = {},
+        -- html = {},
         rust_analyzer = {},
-        cssls = {},
-        somesass_ls = {},
+        -- cssls = {},
+        -- somesass_ls = {},
         gdtoolkit = {},
-        sqlls = {},
+        -- sqlls = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -479,7 +475,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        ts_ls = {},
+        -- ts_ls = {},
         --
         --html-lsp = {},
         lua_ls = {
@@ -730,9 +726,6 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
-  {
-    'ThePrimeagen/vim-be-good',
-  },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -753,7 +746,7 @@ require('lazy').setup({
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      --require('nvim-treesitter.configs').setup(opts)
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
